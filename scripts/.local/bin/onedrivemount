@@ -1,0 +1,3 @@
+#!/bin/bash
+umount ~/onedrive
+rclone mount --vfs-cache-mode writes onedrive: onedrive
