@@ -10,6 +10,7 @@ I am starting to see why people like NixOs
 - nvim
 - ncmpcpp
 - hyprland
+- hyprpaper
 - waybar
 - swaylock
 - rofi-wayland
@@ -23,8 +24,14 @@ I am starting to see why people like NixOs
 - cava
 - qbittorrent
 - discord
+- keepassxc
+- opentabletdriver
+- virtualbox
+- linux-headers (for access to kernel hooks like vboxdrv)
+
 
 
 # Notes
 - Initialize mpd as a user-level service
 - Install XDG Desktop Portal Hyprland
+- setup swap space by adding the resume kernel hook to systemd-boot
