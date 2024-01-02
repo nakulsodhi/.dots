@@ -5,19 +5,22 @@ Can be installed using ```stow */```
 
 
 # Programs
-This is a list of programs needed for the smooth functioning of the setup. Most of these programs are not direct requirements for these dotfiles. This is a personal list of programs to guide in setting up a new system
+This is a list of programs needed for the smooth functioning of the setup.
+Most of these programs are not direct requirements for these dotfiles.
+This is a personal list of programs to guide in setting up a new system.
 I am starting to see why people like NixOs
 - nvim
+- fish, starship
 - ncmpcpp
 - hyprland
 - hyprpaper
 - waybar
-- swaylock
+- swaylock-effects
 - rofi-wayland
 - pipewire
 - firefox
 - texlive, texlive-meta
-- grim
+- grim, slurp, swappy (screenshot utils)
 - onedrive
 - obsidian
 - brightnessctl
@@ -28,6 +31,14 @@ I am starting to see why people like NixOs
 - opentabletdriver
 - virtualbox
 - linux-headers (for access to kernel hooks like vboxdrv)
+- fzf
+- yazi (file manager)
+- PCManFM (file manager)
+- NerdFonts
+- udiskie
+- vimiv (image viewer)
+- polkit-kde-agent (required for these dots)
+- qt5-wayland,qt6-wayland
 
 
 

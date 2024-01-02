@@ -1,9 +1,0 @@
-#!/bin/bash
-
-
-if [  $(pgrep "spotifyd") ]; then
-    pkill spotifyd
-fi
-
-spotifyd $1 >> /dev/null &
-spotify-tui

@@ -1,5 +1,0 @@
-#!/bin/bash
-wal -i "$1"
-#xrdb -merge ~/.cache/wal/colors.Xresources
-#xdotool key "Super_L+F5"
-#zathura-pywal
