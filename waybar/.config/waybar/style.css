@@ -2,9 +2,9 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: FontAwesome, EnvyCodeR Nerd Font, Helvetica, Arial, sans-serif;
-    font-size:16px;
+    font-size:14px;
     border-radius: 0px;
-    min-height: 5px;
+    min-height: 3px;
 }
 
 window#waybar {
@@ -53,7 +53,7 @@ button:hover {
 }
 
 #workspaces {
-    background-color: @background;
+    background-image: linear-gradient(@color1, @color3);
     color: @foreground;
     margin: 2px 1px 3px 1px;
     border-radius: 15px;
@@ -69,15 +69,15 @@ button:hover {
     border-radius: 15px;
     border:0px;
 
-    background-color: @color8;
+    background-color: @background;
     color: @foreground;
     transition: all 0.3s ease-in-out;
     opacity: 0.4;
 }
 #workspaces button.active {
     color: @foreground;
-    background: @color3;
-    min-width: 40px;
+    background: @background;
+    min-width: 60px;
     transition: all 0.3s ease-in-out;
     opacity: 1.0;
 }

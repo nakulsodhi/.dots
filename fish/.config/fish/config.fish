@@ -3,7 +3,7 @@ if status is-interactive
 end
 
 #path variables
-set PATH $PATH ~/.local/bin /opt/texlive/2023/bin/x86_64-linux/  ~/.cargo/bin 
+set PATH $PATH ~/.local/bin /opt/texlive/2023/bin/x86_64-linux/  ~/.cargo/bin  ~/.platformio/penv/bin
 export FZF_DEFAULT_COMMAND='find . \! \( -type d -path ./.git -prune \) \! -type d \! -name '\''*.tags'\'' -printf '\''%P\n'\'
 export FZF_ALT_C_COMMAND='find .'
 #autostart
@@ -29,8 +29,11 @@ starship init fish | source
 fzf_key_bindings
 alias ls="exa"
 alias cat="bat"
+alias nv="nvim"
+alias nvim="neovide"
+#alias nv="nvim"
 alias cf="cd ~/.config/"
 alias nvconf="cd ~/.config/nvim; nvim"
 alias work="cd ~/work_docs/Nakul/"
 alias wmconf="cd ~/.config/hyprland/; nvim"
-alias ytmp3 "yt-dlp --extract-audio --audio-format mp3 --embed-thumbnail --metadata-from-title \"%(artist)s - %(title)s\" $1"
+alias ytmp3 "yt-dlp --extract-audio --audio-format mp3 -o \"%(title)s.%(ext)s\" --embed-thumbnail --metadata-from-title \"%(artist)s - %(title)s\" $1"

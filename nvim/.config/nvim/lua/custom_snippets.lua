@@ -24,26 +24,15 @@ local postfix = require("luasnip.extras.postfix").postfix
 local types = require("luasnip.util.types")
 local parse = require("luasnip.util.parser").parse_snippet
 
-
-
-
-
-ls.add_snippets("tex",
-{
-
---TODO:rewrite using fmt 
-    s("quickstart", {
-        t({"%! TeX root = main.tex","","\\documentclass{article}","", "\\usepackage{amsmath,inputenc,graphicx}",""}),
-        t("\\title{"),
-        i(1,"title"),
-        t({"}",""}),
-        t({"\\author{Nakul Sodhi}",""}),
-        t({"\\begin{document}","","\\maketitle",""}),
-        i(2),
-        t({"","\\end{document}"})
-
-    })
+ls.config.set_config({
+    enable_autosnippets = true
 })
+
+
+
+
+
+
 ls.add_snippets("tex",
 {
     s("mono", fmt(
@@ -85,3 +74,5 @@ Return: <>
 
     )}
 )
+
+require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/lua/snippets/"})

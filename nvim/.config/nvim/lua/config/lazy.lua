@@ -35,8 +35,10 @@ require("lazy").setup({
 	{'hrsh7th/nvim-cmp'},
 	{'hrsh7th/cmp-buffer'},
 	{'hrsh7th/cmp-path'},
-
-	{'L3MON4D3/LuaSnip'},
+    {
+        'L3MON4D3/LuaSnip',
+        dependencies = {'saadparwaiz1/cmp_luasnip'}, 
+    },
     {"rafamadriz/friendly-snippets"},
 
 
@@ -45,14 +47,7 @@ require("lazy").setup({
   { 'nvim-tree/nvim-tree.lua'},
   { 'nvim-tree/nvim-web-devicons'},
   { 'nvim-lualine/lualine.nvim'},
-  {
-      "iurimateus/luasnip-latex-snippets.nvim",
-      config = function()
-          require'luasnip-latex-snippets'.setup()
-          -- or setup({ use_treesitter = true })
-          require("luasnip").config.setup { enable_autosnippets = true }
-      end,
-  },
+
 
 
   {
@@ -78,14 +73,16 @@ require("lazy").setup({
   {"folke/zen-mode.nvim"},
   {"lewis6991/gitsigns.nvim"},
   {'nvim-tree/nvim-web-devicons'},
-  {'lervag/vimtex'},
-
-  {'romgrk/barbar.nvim',
+  {'lervag/vimtex',
+  lazy = false
+  },
+    {'romgrk/barbar.nvim',
   dependencies = {
       'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
       'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
   },
   init = function() vim.g.barbar_auto_setup = false  end,
   },
+  
 
 })

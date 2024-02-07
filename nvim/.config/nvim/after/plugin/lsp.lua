@@ -29,7 +29,7 @@ require('mason-lspconfig').setup({
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
-require("luasnip.loaders.from_vscode").lazy_load()
+--require("luasnip.loaders.from_vscode").lazy_load()
 
 cmp.setup({
     snippet = {
@@ -38,11 +38,11 @@ cmp.setup({
         end,
     },
   sources = {
+    {name = 'luasnip'},
     {name = 'path'},
     {name = 'nvim_lsp'},
     {name = 'buffer'},
     {name = 'cmp_path'},
-    {name = 'luasnip'},
     --{name = 'nvim_lua'},
   },
   formatting = lsp_zero.cmp_format(),

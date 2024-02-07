@@ -2,6 +2,8 @@ vim.opt.guicursor = ""
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
+-- fish shell has problems
+vim.opt.shell = "/bin/bash"
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
