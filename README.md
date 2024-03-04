@@ -16,15 +16,15 @@ I am starting to see why people like NixOs
 - hyprpaper
 - waybar
 - swaylock-effects
-- rofi-wayland
+- rofi-lbonn-wayland (aur)
 - pipewire
 - firefox
 - texlive, texlive-meta
 - grim, slurp, swappy (screenshot utils)
-- onedrive
+- onedrive-abraunegg (aur)
 - obsidian
 - brightnessctl
-- cava
+- cava (aur)
 - qbittorrent
 - discord
 - keepassxc
@@ -39,6 +39,7 @@ I am starting to see why people like NixOs
 - vimiv (image viewer)
 - polkit-kde-agent (required for these dots)
 - qt5-wayland,qt6-wayland
+- wl-clipboard
 
 
 

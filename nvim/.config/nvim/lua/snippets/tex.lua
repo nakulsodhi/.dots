@@ -210,7 +210,7 @@ s(
 
 
     s({trig="[^\\]mu",regTrig = true}, 
-    fmta("\\mu <>", {i(1)}),
+    fmta(" \\mu <>", {i(1)}),
     {condition = tex_utils.in_mathzone}),
 
 
@@ -232,5 +232,9 @@ s(
     {condition = tex_utils.in_mathzone}
     ),
 
+    s({trig="xx"},
+    fmta(" \\times <>", {i(1)}),
+    {condition = tex_utils.in_mathzone}
+    ),
 }
 

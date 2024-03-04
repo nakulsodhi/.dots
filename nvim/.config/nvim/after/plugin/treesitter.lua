@@ -17,7 +17,7 @@ require'nvim-treesitter.configs'.setup {
 
   highlight = {
     enable = true,
---    disable = {"latex", "rust"},
+    disable = {"latex"},
     
 
     -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to

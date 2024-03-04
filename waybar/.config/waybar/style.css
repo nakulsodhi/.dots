@@ -1,10 +1,10 @@
 @import '../../.cache/wal/colors-waybar.css';
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, EnvyCodeR Nerd Font, Helvetica, Arial, sans-serif;
-    font-size:14px;
+    font-family: FontAwesome, CaskaydiaCove Nerd Font , Helvetica, Arial, sans-serif;
+    font-size:10px;
     border-radius: 0px;
-    min-height: 3px;
+    min-height: 0px;
 }
 
 window#waybar {
@@ -174,7 +174,7 @@ button:hover {
 }
 
 #pulseaudio-slider slider {
-    min-height: 5px;
+    min-height: 0px;
     min-width: 0px;
     opacity: 0;
     background-image: none;
