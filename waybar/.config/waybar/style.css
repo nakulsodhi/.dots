@@ -71,14 +71,14 @@ button:hover {
 
     background-color: @background;
     color: @foreground;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.15s ease-in-out;
     opacity: 0.4;
 }
 #workspaces button.active {
     color: @foreground;
     background: @background;
     min-width: 60px;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.15s ease-in-out;
     opacity: 1.0;
 }
 
