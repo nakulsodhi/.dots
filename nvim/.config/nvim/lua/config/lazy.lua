@@ -38,6 +38,7 @@ require("lazy").setup({
     {
         'L3MON4D3/LuaSnip',
         dependencies = {'saadparwaiz1/cmp_luasnip'}, 
+        build = {"make install_jsregexp"}
     },
     {"rafamadriz/friendly-snippets"},
 
@@ -68,11 +69,56 @@ require("lazy").setup({
   },
 
   {
-      "abecodes/tabout.nvim"
+      "kawre/neotab.nvim",
+      event = "InsertEnter",
+      opts = {
+          tabkey = "",
+          act_as_tab = true,
+          behavior = "nested", ---@type ntab.behavior
+          pairs = { ---@type ntab.pair[]
+          { open = "(", close = ")" },
+          { open = "[", close = "]" },
+          { open = "{", close = "}" },
+          { open = "'", close = "'" },
+          { open = '"', close = '"' },
+          { open = "`", close = "`" },
+          { open = "<", close = ">" },
+      },
+      exclude = {},
+      smart_punctuators = {
+          enabled = true,
+          semicolon = {
+              enabled = true,
+              ft = { "cs", "c", "cpp", "java", "rust" },
+          },
+          escape = {
+              enabled = true,
+              triggers = {}, ---@type table<string, ntab.trigger>
+          },
+      },
+  }
   },
   {"folke/zen-mode.nvim"},
   {"lewis6991/gitsigns.nvim"},
   {'nvim-tree/nvim-web-devicons'},
+  {'Pocco81/auto-save.nvim',
+  init = function ()
+      require("auto-save").setup {
+          enabled = false,
+          condition = function(buf)
+              local fn = vim.fn
+              local utils = require("auto-save.utils.data")
+              if
+                  fn.getbufvar(buf, "&modifiable") == 1
+                  and utils.set_of({'md', 'tex', 'org', 'txt'})[fn.getbufvar(buf, "&filetype")]
+                  then
+                      return true -- met condition(s), can save
+                  end
+                  return false -- can't save
+              end,
+        }
+      end,
+  },
   {'lervag/vimtex',
   lazy = false
   },
@@ -83,6 +129,5 @@ require("lazy").setup({
   },
   init = function() vim.g.barbar_auto_setup = false  end,
   },
-  
 
 })

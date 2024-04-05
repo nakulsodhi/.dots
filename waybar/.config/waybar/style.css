@@ -11,7 +11,7 @@ window#waybar {
 /*    border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
  /*   background-color: @background; */
     background-color: transparent;
-    color: @foreground;
+    color: @color3; /*just want a darker color since background is transparent*/
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -162,7 +162,7 @@ button:hover {
 }
 
 #device-info {
-    border-radius:15px;
+    border-radius:0px;
 }
 
 

@@ -3,9 +3,11 @@ if status is-interactive
 end
 
 #path variables
-set PATH $PATH ~/.local/bin /opt/texlive/2023/bin/x86_64-linux/  ~/.cargo/bin  ~/.platformio/penv/bin
+set PATH $PATH ~/.local/bin   ~/.cargo/bin  ~/.platformio/penv/bin
 export FZF_DEFAULT_COMMAND='find . \! \( -type d -path ./.git -prune \) \! -type d \! -name '\''*.tags'\'' -printf '\''%P\n'\'
 export FZF_ALT_C_COMMAND='find .'
+#export LIBCLANG_PATH="/home/nakul/.rustup/toolchains/esp/xtensa-esp32-elf-clang/esp-16.0.4-20231113/esp-clang/lib"
+#export PATH="/home/nakul/.rustup/toolchains/esp/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin:$PATH"
 #autostart
 #if status is-login
 #    if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
@@ -29,8 +31,8 @@ starship init fish | source
 fzf_key_bindings
 alias ls="exa"
 alias cat="bat"
-alias nv="nvim"
-alias nvim="neovide"
+alias v="neovide --no-fork"
+alias nvim="neovide --no-fork"
 #alias nv="nvim"
 alias cf="cd ~/.config/"
 alias nvconf="cd ~/.config/nvim; nvim"

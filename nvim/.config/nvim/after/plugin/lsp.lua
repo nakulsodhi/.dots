@@ -1,4 +1,5 @@
 local lsp_zero = require('lsp-zero')
+local luasnip = require('luasnip')
 
 lsp_zero.on_attach(function(client, bufnr)
   local opts = {buffer = bufnr, remap = false}
@@ -28,8 +29,18 @@ require('mason-lspconfig').setup({
 })
 
 local cmp = require('cmp')
+local neotab = require('neotab')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 --require("luasnip.loaders.from_vscode").lazy_load()
+
+
+
+local has_words_before = function()
+  unpack = unpack or table.unpack
+  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+end
+
 
 cmp.setup({
     snippet = {
@@ -47,29 +58,59 @@ cmp.setup({
   },
   formatting = lsp_zero.cmp_format(),
   mapping = cmp.mapping.preset.insert({
-    ['<C-n>'] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_next_item()
-            elseif require("luasnip").expand_or_jumpable() then
-        vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
-        -- idk what this elseif condition does lmao copied this shit off nvchad plugins.configs.cmp
-            else
-                fallback()
-            end
-        end, {"i","s",}),
-      ["<C-p>"] = cmp.mapping(function(fallback)
+
+
+    ["<Tab>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable() 
+      -- that way you will only jump inside the snippet region
+      elseif luasnip.expand_or_locally_jumpable() then
+        luasnip.expand_or_jump()
+      elseif has_words_before() then
+        cmp.complete()
+      else
+        neotab.tabout()
+      end
+    end, { "i", "s" }),
+
+    ["<S-Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
-      elseif require("luasnip").jumpable(-1) then
-        vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true), "")
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
       else
         fallback()
       end
-    end, {
-      "i",
-      "s",
-    }),
+    end, { "i", "s" }),
+
+--    ['<C-n>'] = cmp.mapping(function(fallback)
+--            if cmp.visible() then
+--                cmp.select_next_item()
+--            elseif require("luasnip").expand_or_jumpable() then
+--        vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
+--        -- idk what this elseif condition does lmao copied this shit off nvchad plugins.configs.cmp
+--            else
+--                fallback()
+--            end
+--        end, {"i","s",}),
+--      ["<C-p>"] = cmp.mapping(function(fallback)
+--      if cmp.visible() then
+--        cmp.select_prev_item()
+--      elseif require("luasnip").jumpable(-1) then
+--        vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true), "")
+--      else
+--        fallback()
+--      end
+--    end, {
+--      "i",
+--      "s",
+--    }),
     ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-Space>'] = cmp.mapping.abort(),
   }),
+
+
+
+
 })

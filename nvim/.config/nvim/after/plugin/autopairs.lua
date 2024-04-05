@@ -18,3 +18,5 @@ npairs.add_rules({
     -- disable adding a newline when you press <cr>
     :with_cr(cond.none())
   })
+
+
