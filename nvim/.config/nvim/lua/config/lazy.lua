@@ -129,5 +129,17 @@ require("lazy").setup({
   },
   init = function() vim.g.barbar_auto_setup = false  end,
   },
+  { 'rust-lang/rust.vim' },
+  {
+      'mrcjkb/rustaceanvim',
+      ft = { 'rust' },
+  },
+  {
+      'mfussenegger/nvim-dap',
+      dependencies = {
+        "rcarriga/nvim-dap-ui",
+        "theHamsta/nvim-dap-virtual-text",
+      },
+    },
 
 })

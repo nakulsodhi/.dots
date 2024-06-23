@@ -16,9 +16,10 @@ lsp_zero.on_attach(function(client, bufnr)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
+
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = { 'rust_analyzer'},
+--  ensure_installed = { 'rust_analyzer'},
   handlers = {
     lsp_zero.default_setup,
     lua_ls = function()
