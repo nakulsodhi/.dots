@@ -1,7 +1,7 @@
 @import '../../.cache/wal/colors-waybar.css';
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: CaskaydiaCove Nerd Font , Helvetica, Arial, sans-serif;
+    font-family: CaskaydiaMono Nerd Font , Helvetica, Arial, sans-serif;
     font-size:10px;
     border-radius: 0px;
     min-height: 0px;
