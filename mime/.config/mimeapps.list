@@ -1,4 +1,3 @@
-
 [Default Applications]
 application/x-xpinstall=firefox.desktop
 application/json=firefox.desktop
@@ -30,18 +29,19 @@ x-scheme-handler/http=firefox.desktop
 x-scheme-handler/https=firefox.desktop
 application/ovf=
 application/x-shellscript=nvim.desktop
-text/x-makefile=neovide.desktop
-text/x-c++src=neovide.desktop
-text/x-java=neovide.desktop
-text/plain=neovide.desktop
-text/tcl=neovide.desktop
-text/x-csrc=neovide.desktop
-text/x-chdr=neovide.desktop
-text/x-pascal=neovide.desktop
-text/x-c++hdr=neovide.desktop
-text/x-moc=neovide.desktop
-text/x-tex=neovide.desktop
-application/epub+zip=org.pwmt.zathura-pdf-mupdf.desktop
+text/x-makefile=nvim.desktop
+text/x-c++src=nvim.desktop
+text/x-java=nvim.desktop
+text/plain=nvim.desktop
+text/tcl=nvim.desktop
+text/x-csrc=nvim.desktop
+text/x-chdr=nvim.desktop
+text/x-pascal=nvim.desktop
+text/x-c++hdr=nvim.desktop
+text/x-moc=nvim.desktop
+text/x-tex=nvim.desktop
+application/epub=org.pwmt.zathura-pdf-mupdf.desktop
+application/zip=zip.desktop
 application/x-fictionbook+xml=org.pwmt.zathura-pdf-mupdf.desktop
 application/oxps=org.pwmt.zathura-pdf-mupdf.desktop
 application/vnd.comicbook-rar=org.pwmt.zathura-cb.desktop
@@ -52,3 +52,9 @@ application/vnd.comicbook+zip=org.pwmt.zathura-cb.desktop
 x-scheme-handler/mailspring=Mailspring.desktop
 x-scheme-handler/lunarclient=lunarclient.desktop
 x-scheme-handler/discord-562286213059444737=lunarclient.desktop
+x-scheme-handler/tg=org.telegram.desktop.desktop
+x-scheme-handler/tonsite=org.telegram.desktop.desktop
+
+[Added Associations]
+x-scheme-handler/tg=org.telegram.desktop.desktop;
+x-scheme-handler/tonsite=org.telegram.desktop.desktop;
