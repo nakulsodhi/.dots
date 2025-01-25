@@ -19,6 +19,7 @@ require("lazy").setup({
 		dependencies = { 'nvim-lua/plenary.nvim' }
 	},
 	{ 'rose-pine/neovim', name = 'rose-pine' },
+	{ "miikanissi/modus-themes.nvim", priority = 1000 },
 	{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
 	{"theprimeagen/harpoon"},
 	{"mbbill/undotree"},

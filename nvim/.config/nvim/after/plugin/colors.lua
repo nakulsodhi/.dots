@@ -9,7 +9,7 @@ require("rose-pine").setup({
 
 
 function ApplyColor(color)
-	color = color or "rose-pine"
+	color = color or "modus"
 	vim.cmd.colorscheme(color)
 
     if vim.g.neovide then
@@ -21,6 +21,6 @@ function ApplyColor(color)
 
     
 end
-ApplyColor("rose-pine")
+ApplyColor("modus")
 
 
