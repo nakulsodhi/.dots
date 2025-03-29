@@ -11,3 +11,5 @@ function ya() {
 	fi
 	rm -f -- "$tmp"
 }
+PATH=$PATH:~/.config/emacs/bin
+DOOMDIR=~/.config/doom

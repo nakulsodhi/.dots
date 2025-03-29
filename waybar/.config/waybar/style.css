@@ -11,7 +11,7 @@ window#waybar {
 /*    border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
  /*   background-color: @background; */
     background-color: transparent;
-    color: @color3; /*just want a darker color since background is transparent*/
+    color: @foreground; /*just want a darker color since background is transparent*/
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -53,7 +53,7 @@ button:hover {
 }
 
 #workspaces {
-    background-image: linear-gradient(@color1, @color3);
+    background-image: linear-gradient(@foreground, @background);
     color: @foreground;
     margin: 2px 1px 3px 1px;
     border-radius: 15px;
@@ -84,7 +84,7 @@ button:hover {
 
 #workspaces button:hover {
     color:@foreground;
-    background: @color3;
+    background: @color1;
     border-radius: 15px;
     opacity:0.7;
 }
