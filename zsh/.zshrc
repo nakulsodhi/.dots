@@ -13,3 +13,4 @@ function ya() {
 }
 PATH=$PATH:~/.config/emacs/bin
 DOOMDIR=~/.config/doom
+#testing
